@@ -12,7 +12,8 @@
 		<div></div>
 	</div>
 	<script>
-		wx.miniProgram.navigateTo({url: '/pages/certification/result'})
+		wx.miniProgram.postMessage({ auth_result: 1 })
+		wx.miniProgram.navigateBack({delta: 1})
 	</script>
 </body>
 </html>
