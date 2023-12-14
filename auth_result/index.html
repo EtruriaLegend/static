@@ -3,32 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link ref="stylesheet" href="./index.css" type="text/css" />
+	<link ref="stylesheet" href="./index.css">
 	<title>操作结果</title>
 </head>
 <body>
-	<script src="./vue3.3.11.min.js"></script>
+	<script type="text/javascript" src="./jsskd.js"></script>
 	<div id="app">
-		<div class="container">
-			<image
-				class="bg"
-				src="https://oss-prod-vsc-master.renrenjia.com.cn/100000/static/20231207/certification_result.png"
-			/>
-			<div class="result-text" v-if="succeed">恭喜您，认证成功</div>
-			<div v-else class="result-text" style="color: #FF5858">认证失败</div>
-			<div class="tips" v-if="succeed">{{succeed?'尊敬的师傅，您已认证成功。期待您加下人人驾网约车。':'尊敬的师傅，您未认证成功，请重新尝试。'}}</div>
-		</div>
+		<div></div>
 	</div>
 	<script>
-		const {createApp, ref} = Vue;
-		createApp({
-			setup() {
-				const succeed = ref(true)
-				return {
-					succeed
-				}
-			}
-		}).mount('#app')
+		wx.miniProgram.navigateTo({url: '/pages/certification/result'})
 	</script>
 </body>
 </html>
