@@ -8,11 +8,22 @@
 </head>
 <body>
 	<script type="text/javascript" src="./jsskd.js"></script>
+	<script type="text/javascript" src="./vue3.3.11.min.js"></script>
 	<div id="app">
-		<div></div>
+		<p>{{url}}</p>
 	</div>
 	<script>
-		wx.miniProgram.navigateTo({url: '/pages/certification/result'})
+		const { createApp, ref } = Vue
+		const href = window.location.href
+		createApp({
+			setup() {
+				const url = ref(href)
+				return {
+					url
+				}
+			}
+		}).mount('#app')
+		// wx.miniProgram.navigateTo({url: '/pages/certification/result'})
 	</script>
 </body>
 </html>
